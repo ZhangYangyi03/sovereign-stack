@@ -1,0 +1,274 @@
+{
+ "environment": {
+  "python": "3.13.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD",
+  "cpu_count": 16,
+  "pow_backend": "gmpy2"
+ },
+ "crypto": [
+  {
+   "name": "group verify (primality, generator order)",
+   "p_bits": 2048,
+   "ms_median": 1231.654,
+   "ms_min": 1208.45,
+   "ms_max": 1242.423,
+   "samples": 3
+  },
+  {
+   "name": "Pedersen commitment (2048-bit group)",
+   "ms_median": 5.015,
+   "ms_min": 4.273,
+   "ms_max": 6.995,
+   "samples": 5
+  },
+  {
+   "name": "Ed25519 sign",
+   "n": 200,
+   "ms_median": 26.162,
+   "ms_min": 24.579,
+   "ms_max": 27.247,
+   "samples": 3
+  },
+  {
+   "name": "Ed25519 verify",
+   "n": 200,
+   "ms_median": 19.516,
+   "ms_min": 18.297,
+   "ms_max": 19.535,
+   "samples": 3
+  },
+  {
+   "name": "SHA-256 over 1 MiB",
+   "n": 1,
+   "digest": "8f990ba0b577b51c",
+   "ms_median": 1.204,
+   "ms_min": 1.181,
+   "ms_max": 1.298,
+   "samples": 5
+  }
+ ],
+ "zk": [
+  {
+   "name": "range proof, 8 bits",
+   "bytes": 39384,
+   "prove": {
+    "ms_median": 189.996,
+    "ms_min": 175.509,
+    "ms_max": 190.55,
+    "samples": 3
+   },
+   "verify": {
+    "ms_median": 192.288,
+    "ms_min": 190.152,
+    "ms_max": 213.153,
+    "samples": 3
+   }
+  },
+  {
+   "name": "range proof, 16 bits",
+   "bytes": 76407,
+   "prove": {
+    "ms_median": 398.489,
+    "ms_min": 390.425,
+    "ms_max": 410.314,
+    "samples": 3
+   },
+   "verify": {
+    "ms_median": 356.85,
+    "ms_min": 355.21,
+    "ms_max": 360.208,
+    "samples": 3
+   }
+  },
+  {
+   "name": "range proof, 24 bits",
+   "bytes": 113420,
+   "prove": {
+    "ms_median": 519.882,
+    "ms_min": 517.363,
+    "ms_max": 541.679,
+    "samples": 3
+   },
+   "verify": {
+    "ms_median": 552.991,
+    "ms_min": 535.858,
+    "ms_max": 556.925,
+    "samples": 3
+   }
+  },
+  {
+   "name": "Schnorr dlog proof",
+   "bytes": 1743,
+   "prove": {
+    "ms_median": 7.082,
+    "ms_min": 6.708,
+    "ms_max": 7.445,
+    "samples": 5
+   },
+   "verify": {
+    "ms_median": 4.028,
+    "ms_min": 3.914,
+    "ms_max": 4.932,
+    "samples": 5
+   }
+  }
+ ],
+ "exchange": [
+  {
+   "name": "exchange round trip, 20 cells, 8-bit range",
+   "cells": 20,
+   "bits": 8,
+   "bytes": 39388,
+   "ms_median": 442.06,
+   "ms_min": 427.91,
+   "ms_max": 479.647,
+   "samples": 3
+  },
+  {
+   "name": "exchange round trip, 60 cells, 8-bit range",
+   "cells": 60,
+   "bits": 8,
+   "bytes": 39379,
+   "ms_median": 613.352,
+   "ms_min": 608.955,
+   "ms_max": 658.704,
+   "samples": 3
+  },
+  {
+   "name": "exchange round trip, 120 cells, 8-bit range",
+   "cells": 120,
+   "bits": 8,
+   "bytes": 39378,
+   "ms_median": 943.388,
+   "ms_min": 864.674,
+   "ms_max": 997.096,
+   "samples": 3
+  },
+  {
+   "name": "exchange round trip, 60 cells, 24-bit range",
+   "cells": 60,
+   "bits": 24,
+   "bytes": 113422,
+   "ms_median": 1297.223,
+   "ms_min": 1297.223,
+   "ms_max": 1297.223,
+   "samples": 1
+  }
+ ],
+ "compliance": [
+  {
+   "name": "assess against the low baseline",
+   "controls": 149,
+   "counts": {
+    "satisfied": 2,
+    "violated": 0,
+    "undetermined": 147
+   },
+   "ms_median": 2.044,
+   "ms_min": 1.991,
+   "ms_max": 2.489,
+   "samples": 20
+  },
+  {
+   "name": "assess against the moderate baseline",
+   "controls": 287,
+   "counts": {
+    "satisfied": 5,
+    "violated": 0,
+    "undetermined": 282
+   },
+   "ms_median": 2.595,
+   "ms_min": 2.367,
+   "ms_max": 4.228,
+   "samples": 20
+  },
+  {
+   "name": "assess against the high baseline",
+   "controls": 370,
+   "counts": {
+    "satisfied": 6,
+    "violated": 0,
+    "undetermined": 364
+   },
+   "ms_median": 3.666,
+   "ms_min": 3.391,
+   "ms_max": 5.937,
+   "samples": 20
+  },
+  {
+   "name": "third-party verify of a report",
+   "controls": 287,
+   "ms_median": 11.678,
+   "ms_min": 11.005,
+   "ms_max": 15.17,
+   "samples": 20
+  }
+ ],
+ "ops": [
+  {
+   "name": "4 replicas, 6 partition rounds",
+   "operations": 480,
+   "increments": 342,
+   "lost": 0,
+   "converged": true,
+   "ms_median": 17.582,
+   "ms_min": 16.825,
+   "ms_max": 18.759,
+   "samples": 3
+  },
+  {
+   "name": "12 replicas, 6 partition rounds",
+   "operations": 480,
+   "increments": 344,
+   "lost": 0,
+   "converged": true,
+   "ms_median": 81.875,
+   "ms_min": 77.919,
+   "ms_max": 86.336,
+   "samples": 3
+  },
+  {
+   "name": "40 replicas, 6 partition rounds",
+   "operations": 480,
+   "increments": 346,
+   "lost": 0,
+   "converged": true,
+   "ms_median": 1072.873,
+   "ms_min": 974.808,
+   "ms_max": 1164.09,
+   "samples": 3
+  }
+ ],
+ "transport": [
+  {
+   "name": "one frame over loopback, 1 KiB",
+   "ms_median": 14.316,
+   "ms_min": 1.025,
+   "ms_max": 25.736,
+   "samples": 5
+  },
+  {
+   "name": "one frame over loopback, 64 KiB",
+   "ms_median": 14.958,
+   "ms_min": 1.468,
+   "ms_max": 16.243,
+   "samples": 5
+  },
+  {
+   "name": "one frame over loopback, 1024 KiB",
+   "ms_median": 24.788,
+   "ms_min": 11.055,
+   "ms_max": 32.341,
+   "samples": 5
+  },
+  {
+   "name": "one sealed frame over loopback",
+   "ms_median": 12.853,
+   "ms_min": 1.29,
+   "ms_max": 24.183,
+   "samples": 10
+  }
+ ]
+}

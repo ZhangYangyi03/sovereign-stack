@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sovereign-stack"
+version = "0.1.0"
+description = "Data exchange without custody, compliance in three-valued logic, and offline-first replication"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{name = "Yangyi Zhang"}]
+keywords = ["data-sovereignty", "zero-knowledge", "crdt", "compliance", "nist-800-53", "audit"]
+dependencies = ["cryptography>=42"]
+
+[project.optional-dependencies]
+fast = ["gmpy2>=2.1"]
+test = ["pytest>=7"]
+
+[project.scripts]
+sgw-node = "ss.gatewayd:main"
+sgw-ctl = "ss.gatewayctl:main"
+
+[tool.setuptools]
+packages = ["ss"]
+
+[tool.setuptools.package-data]
+ss = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

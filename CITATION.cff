@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "sovereign-stack"
+abstract: >-
+  A three-part gateway for public-sector IT: bounded queries answered with
+  commitments and range proofs, compliance assessment in strong Kleene logic
+  against the NIST SP 800-53 rev5 baselines, and offline-first replication that
+  converges without losing an operation.
+authors:
+  - family-names: Zhang
+    given-names: Yangyi
+version: 0.1.0
+date-released: "2026-10-08"
+license: Apache-2.0

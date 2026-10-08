@@ -1,0 +1,470 @@
+{
+ "custody": {
+  "seeds": 8,
+  "per_run": [
+   {
+    "seed": 0,
+    "cells": 48,
+    "non_zero_cells": 46,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 23,
+     "refused": 1,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   },
+   {
+    "seed": 1,
+    "cells": 48,
+    "non_zero_cells": 46,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 21,
+     "refused": 3,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   },
+   {
+    "seed": 2,
+    "cells": 48,
+    "non_zero_cells": 48,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 23,
+     "refused": 1,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   },
+   {
+    "seed": 3,
+    "cells": 48,
+    "non_zero_cells": 46,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 22,
+     "refused": 2,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   },
+   {
+    "seed": 4,
+    "cells": 48,
+    "non_zero_cells": 47,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 23,
+     "refused": 1,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   },
+   {
+    "seed": 5,
+    "cells": 48,
+    "non_zero_cells": 45,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 24,
+     "refused": 0,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   },
+   {
+    "seed": 6,
+    "cells": 48,
+    "non_zero_cells": 47,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 21,
+     "refused": 3,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   },
+   {
+    "seed": 7,
+    "cells": 48,
+    "non_zero_cells": 48,
+    "questions": 24,
+    "horizons": [
+     6,
+     12,
+     24
+    ],
+    "exact": {
+     "released": 24,
+     "refused": 0,
+     "max_rank": 24,
+     "ranks_at": {
+      "6": 6,
+      "12": 12,
+      "24": 24
+     },
+     "determined_fraction": 0.5
+    },
+    "bounded": {
+     "proved": 20,
+     "refused": 4,
+     "cells_determined": 0,
+     "counts_leaked": 0
+    },
+    "counter": {
+     "threshold": 10,
+     "attempts": 22,
+     "released": 20,
+     "refused": 2,
+     "first_refusal": 19,
+     "isolated": 12,
+     "reasons": {
+      "disclosure-control": 2
+     }
+    }
+   }
+  ],
+  "cells": 48,
+  "non_zero_cells": 46,
+  "questions": 24,
+  "horizons": [
+   6,
+   12,
+   24
+  ],
+  "exact": {
+   "releases_mean": 24.0,
+   "max_rank_mean": 24.0,
+   "determined_fraction_mean": 0.5,
+   "ranks_at_mean": {
+    "6": 6.0,
+    "12": 12.0,
+    "24": 24.0
+   }
+  },
+  "bounded": {
+   "proved_mean": 22.125,
+   "refused_mean": 1.875,
+   "counts_leaked_total": 0,
+   "cells_determined": 0
+  },
+  "counter": {
+   "threshold": 10,
+   "attempts": 22,
+   "released_mean": 20.0,
+   "refused_mean": 2.0,
+   "first_refusal": {
+    "19": 8
+   },
+   "isolated_mean": 12.0,
+   "reasons": [
+    "disclosure-control"
+   ]
+  }
+ },
+ "verdicts": {
+  "profiles": {
+   "low": {
+    "controls": 149,
+    "counts": {
+     "satisfied": 1,
+     "violated": 0,
+     "undetermined": 148
+    },
+    "two_valued_would_report_satisfied": 149,
+    "undetermined_by_reason": {
+     "human-step": 1,
+     "no-evidence": 1,
+     "not-implemented": 146
+    },
+    "head": "897fbf1c8d3faa58"
+   },
+   "moderate": {
+    "controls": 287,
+    "counts": {
+     "satisfied": 4,
+     "violated": 0,
+     "undetermined": 283
+    },
+    "two_valued_would_report_satisfied": 287,
+    "undetermined_by_reason": {
+     "human-step": 1,
+     "no-evidence": 1,
+     "not-implemented": 281
+    },
+    "head": "dad9da23971a268f"
+   },
+   "high": {
+    "controls": 370,
+    "counts": {
+     "satisfied": 5,
+     "violated": 0,
+     "undetermined": 365
+    },
+    "two_valued_would_report_satisfied": 370,
+    "undetermined_by_reason": {
+     "human-step": 1,
+     "no-evidence": 1,
+     "not-implemented": 363
+    },
+    "head": "0961801108f720cf"
+   }
+  },
+  "attestation_ageing": [
+   {
+    "admin_attestation_age_days": 0,
+    "ia-2.1": "satisfied",
+    "satisfied": 5
+   },
+   {
+    "admin_attestation_age_days": 30,
+    "ia-2.1": "satisfied",
+    "satisfied": 5
+   },
+   {
+    "admin_attestation_age_days": 180,
+    "ia-2.1": "satisfied",
+    "satisfied": 5
+   },
+   {
+    "admin_attestation_age_days": 364,
+    "ia-2.1": "satisfied",
+    "satisfied": 5
+   },
+   {
+    "admin_attestation_age_days": 366,
+    "ia-2.1": "undetermined",
+    "satisfied": 4
+   },
+   {
+    "admin_attestation_age_days": 400,
+    "ia-2.1": "undetermined",
+    "satisfied": 4
+   },
+   {
+    "admin_attestation_age_days": 730,
+    "ia-2.1": "undetermined",
+    "satisfied": 4
+   }
+  ],
+  "restore_ageing": [
+   {
+    "restore_test_age_days": 1,
+    "cp-9.1": "satisfied"
+   },
+   {
+    "restore_test_age_days": 90,
+    "cp-9.1": "satisfied"
+   },
+   {
+    "restore_test_age_days": 179,
+    "cp-9.1": "satisfied"
+   },
+   {
+    "restore_test_age_days": 181,
+    "cp-9.1": "violated"
+   },
+   {
+    "restore_test_age_days": 400,
+    "cp-9.1": "violated"
+   }
+  ],
+  "tamper_detection": {
+   "accepted": false,
+   "problems": [
+    "head does not match the findings as written"
+   ]
+  }
+ }
+}
