@@ -816,3 +816,23 @@ def test_a_differencing_sequence_is_refused_by_the_counter():
     # and every refusal is in the chain, with its reason code
     refusals = [e for e in probe.chain.entries if e["event"] == "refuse"]
     assert refusals and refusals[0]["code"].startswith("disclosure-control")
+
+
+def test_the_experiment_run_is_serialisable_and_aggregates_the_same():
+    """A per-seed run crosses JSON between seeds so a long run can be resumed.
+
+    JSON turns integer dict keys into strings, so the aggregation has to accept
+    both shapes. This is a regression test: the first CI run of the experiment
+    failed with KeyError: '6' for exactly this reason while the local run passed,
+    because the local run aggregated the objects in memory and CI re-read them.
+    """
+    import importlib.util
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    spec = importlib.util.spec_from_file_location("experiment2", os.path.join(root, "bench", "experiment.py"))
+    experiment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(experiment)
+    run = experiment.custody_run(0, n_regions=6, n_classes=3, n_questions=4)
+    in_memory = experiment.aggregate([run])
+    through_json = experiment.aggregate([json.loads(json.dumps(run))])
+    assert in_memory["exact"]["ranks_at_mean"] == through_json["exact"]["ranks_at_mean"]
+    assert all(isinstance(k, str) for k in in_memory["exact"]["ranks_at_mean"])

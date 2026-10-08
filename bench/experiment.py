@@ -238,11 +238,18 @@ def custody_run(seed: int, n_regions: int = 12, n_classes: int = 4,
     def at(ranks, horizon):
         return ranks[min(horizon, len(ranks)) - 1] if ranks else 0
 
+    def rows_at(ranks):
+        # String keys on purpose. A per-seed run is serialised to JSON between
+        # seeds so a long experiment can be resumed, and JSON turns integer keys
+        # into strings -- which is exactly the mismatch that made the CI run of
+        # this file fail with KeyError: '6' while the local run passed.
+        return {str(h): at(ranks, h) for h in horizons}
+
     return {"seed": seed, "cells": len(cells), "non_zero_cells": truth_rank,
             "questions": len(questions), "horizons": horizons,
             "exact": {"released": released_a, "refused": 0,
                       "max_rank": max(ranks_a) if ranks_a else 0,
-                      "ranks_at": {h: at(ranks_a, h) for h in horizons},
+                      "ranks_at": rows_at(ranks_a),
                       "determined_fraction": round((max(ranks_a) if ranks_a else 0)
                                                     / len(cells), 3)},
             "bounded": {"proved": proved_b, "refused": refused_b,
@@ -271,12 +278,18 @@ def aggregate(runs: list) -> dict:
     Kept separate from the runs so a long experiment can be done in pieces: each
     run is independent and serialisable, and this is a pure function of the list.
     """
+    def dig(obj, key):
+        """A dict that may have been through JSON, so integer keys are strings."""
+        if key in obj:
+            return obj[key]
+        return obj.get(str(key))
+
     def mean(path):
         vals = []
         for r in runs:
             cur = r
             for key in path:
-                cur = cur[key]
+                cur = dig(cur, key) if isinstance(cur, dict) else cur[int(key)]
             if cur is not None:
                 vals.append(cur)
         return round(statistics.fmean(vals), 3) if vals else None
@@ -299,7 +312,7 @@ def aggregate(runs: list) -> dict:
                       "max_rank_mean": mean(("exact", "max_rank")),
                       "determined_fraction_mean": mean(("exact", "determined_fraction")),
                       "ranks_at_mean": {
-                          h: round(statistics.fmean(
+                          str(h): round(statistics.fmean(
                               r["exact"]["ranks_at"][str(h)] for r in runs), 2)
                           for h in runs[0]["horizons"]}},
             "bounded": {"proved_mean": mean(("bounded", "proved")),
@@ -416,7 +429,7 @@ def main(argv=None) -> int:
     e = c["exact"]
     print("   A exact answers, no policy      %5.1f releases, rank %s at question %s "
           "(%.0f%% of the cells determined)"
-          % (e["releases_mean"], [e["ranks_at_mean"][h] for h in c["horizons"]],
+          % (e["releases_mean"], [e["ranks_at_mean"][str(h)] for h in c["horizons"]],
              c["horizons"], 100 * (e["determined_fraction_mean"] or 0)))
     bl = c["bounded"]
     print("   B bounded queries               %5.1f proved, %.1f refused, %d cell values "
